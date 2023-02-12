@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const carts_1 = require("../controllers/carts");
+const addToCart_1 = require("../validations/addToCart");
+const router = express_1.default.Router();
+router.get("/user_cart/:user_id", carts_1.getCartByUserIDHandler);
+router.get("/all_orders", carts_1.getAllOrdersHandler);
+router.get("/unavailable_shipping_dates", carts_1.getUnavailableShippingDatesHandler);
+router.get("/cart_details/:cart_id", carts_1.getCartDetailsByCartIDHandler);
+router.post("/add_to_cart/:cart_id", addToCart_1.validateAddProduct, carts_1.addProductToCartByIDHandler);
+router.put("/update_quantity/:cart_id", addToCart_1.validateAddProduct, carts_1.updateProductQuantityHandler);
+router.delete("/remove_from_cart/:cart_id", carts_1.removeProductFromCartByIDHandler);
+router.delete("/delete_cart/:cart_id", carts_1.deleteAllCartHandler);
+router.get("/cart_total_price/:cart_id", carts_1.getCartTotalPriceHandler);
+router.post("/order/:cart_id", carts_1.orderCartByIDHandler);
+exports.default = router;

@@ -1,0 +1,46 @@
+mat-grid-tile {
+    background-color: gainsboro;
+}
+
+mat-grid-list {
+    margin: 10px;
+}
+
+.topConteiner {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.headerShufersal {
+    font-weight: bold;
+}
+
+.bottomDiv {
+    margin-top: 30px;
+}
+
+.manageBtn {
+    margin-bottom: 10px;
+}
+
+.mainImg {
+    margin: auto;
+    width: 400px;
+    height: 300px;
+}
+
+.secondaryImg {
+    width: 250px;
+   
+}
+
+#details {
+    margin-bottom: 30px;
+}
+
+.main{
+    background-image: url("../../../assets/market_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}

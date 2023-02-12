@@ -1,0 +1,15 @@
+.topConteiner {
+    margin-top: 40px;
+}
+
+.errorLogin,
+.buttonsSection {
+    margin-top: 10px;
+}
+
+.main{
+    background-color: gainsboro;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 10px;
+}

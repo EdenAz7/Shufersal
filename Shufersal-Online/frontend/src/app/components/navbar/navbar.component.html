@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <div class="example-nav">
+        <button routerLink="home" mat-button>
+            <img src="https://www.shufersal.co.il/online/medias/sys_master/root/h18/hc4/11095082172446/logo-online.png" alt="shufersal logo" width="200px">
+        </button>
+    </div>
+    <div class="example-nav" *ngIf="this.current_user && this.current_role === 'viewer'">
+        <button routerLink="shopping" mat-button>Shopping</button>
+    </div>
+    <div class="example-nav" *ngIf="this.current_user && this.current_role === 'admin'">
+        <button routerLink="management" mat-button>Admin</button>
+    </div>
+    <span class="example-spacer"></span>
+    <div *ngIf="current_user" class="example-nav">
+        <b>Hello {{current_user | titlecase}}</b>
+    </div>
+    <div class="example-nav">
+        <span> 🛒Welcome to <b style="color: rgb(255, 75, 75);">Shufersal</b > 
+            <b style="color: rgb(0, 128, 255);"> Online</b >🛒 </span>
+    </div>
+    <div class="example-nav" *ngIf="this.current_user">
+        <button (click)="logout()" mat-button color="warn"> Logout </button>
+    </div>
+</mat-toolbar>

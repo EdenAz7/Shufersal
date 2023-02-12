@@ -1,0 +1,32 @@
+<div class="main">
+        <h1 class="headerShufersal">Welcome to Shufersal </h1>
+        <h3> Best online shopping on the Internet 🔎 </h3>
+        <form (submit)="onLogin(loginForm)" class="example-form" #loginForm="ngForm">
+        <b *ngIf="!(this.isLoggedIn$ | async)">Login:</b>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>User Email</mat-label>
+                <input [disabled]="(this.isLoggedIn$ | async) === true" #user_email="ngModel" minlength="2" required
+                    type="email" name="user_email" matInput placeholder="User Email" ngModel>
+                <mat-error *ngIf="user_email.invalid"> Email invalid </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input [disabled]="(this.isLoggedIn$ | async) === true" #user_password="ngModel" minlength="4" required
+                    type="password" name="user_password" matInput placeholder="User Password" ngModel>
+                <mat-error *ngIf="user_password.invalid"> Password invalid </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="buttonsSection">
+            <button [disabled]="(this.isLoggedIn$ | async) === true || loginForm.invalid" type="submit"
+                mat-raised-button color="primary">Login</button>
+            <button routerLink="/register" mat-button>Sign Up</button>
+            <mat-error class="errorLogin" *ngIf="loginForm.invalid"> fill all the fields to login</mat-error>
+        </div>
+    </form><br>
+
+    <!-- <img class="mainImg" src="/assets/market_2.png" alt="404"/> -->
+
+</div>
